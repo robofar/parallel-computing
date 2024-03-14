@@ -1,7 +1,7 @@
 #ifndef A_STAR_KERNEL_HEADER
 #define A_STAR_KERNEL_HEADER
 
-#include "nodeClass.cuh"
+#include "nodeClass2.cuh"
 
 
 __global__
