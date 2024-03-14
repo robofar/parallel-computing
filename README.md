@@ -1,6 +1,4 @@
-# Parallel Computing Lab for Mobile Robots
-
-This is repository for the Parallel Computing Lab for Mobile Robots.
+# Parallel Computing
 
 You need NVIDIA GPU with minimum 4 GB of VRAM (recommended 8 GB of VRAM to be able to run big Polygon map)
 
