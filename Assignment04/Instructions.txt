@@ -1,0 +1,50 @@
+From Assignment 03, output gave visibility graph. 
+For polygons_indoor, polygons_small and polygons_large, 
+visibility graphs are computed and named vg_indoor.txt, vg_small.txt and vg_large.txt respectively (stored in Assignment03 directory).
+That is input for Assignment 04.
+
+If you want to change file for computing shortest path please edit variable filepath (this is relative path wrt to Assignment04 directory):
+std::string filepath = "../Assignment03/vg_indoor.txt";
+std::string filepath = "../Assignment03/vg_small.txt";
+std::string filepath = "../Assignment03/vg_large.txt";
+
+Output of shortest path is stored in Assignment04 directory as:
+shortest_indoor.txt
+shortest_small.txt
+shortest_large.txt
+
+=============================================================================
+
+Final files that you should consider while looking at our approach are:
+
+nodeClass2.cuh
+shortestPath3.cu
+kernelAStar2.cuh
+
+numbers 2 and 3 just represent new versions of my code, because I had some previous versions, but these ones mentioned above are last.
+
+=============================================================================
+
+Run (from Assignment04 directory):
+bash compile.sh - for compilation
+bash execute.sh - for execution
+bash visualize.sh - for visualization of shortest path
+
+Note: since output of execute will be truncated in terminal, you can use command:
+bash execute.sh > someName.txt
+This will save output of bash script to someName txt file where you can see full output if you want.
+
+=============================================================================
+
+In the directory Plots you can see following images:
+
+vg_indoor - visibility graph for polygons_indoor.txt file
+vg_small - visibility graph for polygons_small.txt file
+vg_large - visibility graph for polygons_large.txt file
+shortest_plain_indoor - shortest path for polygons_indoor.txt file (without visibility graph being ploted together with shortest path)
+shortest_plain_small - shortest path for polygons_small.txt file (without visibility graph being ploted together with shortest path)
+shortest_plain_large - shortest path for polygons_large.txt file (without visibility graph being ploted together with shortest path)
+shortest_vg_indoor - shortest path for polygons_indoor.txt file (with visibility graph being ploted together with shortest path)
+shortest_vg_small - shortest path for polygons_small.txt file (with visibility graph being ploted together with shortest path)
+shortest_vg_large - shortest path for polygons_large.txt file (with visibility graph being ploted together with shortest path)
+
