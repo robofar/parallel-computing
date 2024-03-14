@@ -1,0 +1,32 @@
+As you can see there are 8 different versions of Assignment 01. So we tried following combinations:
+
+1. Threads per Block - int ; Blocks per Grid - int ; Initialization of vectors on CPU ; Host and Device memory was used
+2. Threads per Block - int ; Blocks per Grid - int ; Initialization of vectors on CPU ; Host and Device memory was used
+3. Threads per Block - int ; Blocks per Grid - int ; Initialization of vectors on CPU ; Host and Device memory was used
+
+1,2,3 - Basically the same, only different number of Threads per Block and Blocks per Grid was used
+
+================================================================================================================================================
+
+4. Threads per Block - dim3 ; Blocks per Grid - dim3 ; Initialization of vectors on CPU ; Host and Device memory was used
+5. Threads per Block - dim3 ; Blocks per Grid - int ; Initialization of vectors on CPU ; Host and Device memory was used
+6. Threads per Block - int ; Blocks per Grid - dim3 ; Initialization of vectors on CPU ; Host and Device memory was used
+
+4,5,6 - Different combinations of types for Threads per Block and Blocks per Grid (int & int ; dim3 & dim3 ; dim3 & int ; int ; dim3)
+
+================================================================================================================================================
+
+7. Threads per Block - int ; Blocks per Grid - int ; Initialization of vectors on GPU ; Host and Device memory was used
+
+================================================================================================================================================
+
+8. Threads per Block - int ; Blocks per Grid - int ; Initialization of vectors on CPU ; Unified memory was used
+
+================================================================================================================================================
+
+To compile file, use compile.sh script, and in it change version of file which you would like to compile.
+To run executable, use execute.sh script, and in it change version of executable which you would like to run. 
+
+I tried putting from 100 million elements to 900 million elements:
+-> Up to 330 million elements results (for vector addition on CPU and GPU) were the same
+-> From 340 milion elements onwards results (for vector addition on CPU and GPU) were not the same

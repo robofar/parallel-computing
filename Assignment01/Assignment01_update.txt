@@ -1,0 +1,37 @@
+=========================================================================================================================================================
+
+As you suggested, I now added testing whether allocation succeeded with the flag that cudaMalloc returns.
+
+cudaMalloc and cudaMallocManaged are using flags with same meaning, so in both cases with both types of memory, same condition can be used.
+
+For CPU, if memory allocation fails, NULL pointer will be returned.
+
+
+=========================================================================================================================================================
+
+
+Also, I tried allocation 350 milion elements for each vector using Managed Memory, as you said, and it worked (just added it for clarification).
+In the case of device memory it failed (>8GB).
+
+So, above-mentioned changes are in these files:
+1. assignment01_v1 => device memory was used; number of elements > 330 million => FAIL
+1. assignment01_v8 => managed memory was used; number of elements > 330 million => SUCCESS (CPU addition also added in v8 - described below)
+
+
+=========================================================================================================================================================
+
+In v8 version, I thought since we use Unified Memory, which can be accessed from both - host and device, I do not need to compare results with CPU addition.
+
+But now I added it.
+
+So there is part of pure CPU addition, and addition using Unified Memory. Since pointers that point to Unified Memory can be accessed from both -
+cpu and gpu, there is no need for defining separate CPU and GPU arrays, we only need one array to allocate on Unified Memory.
+
+I tested it with 900 million (>340 million where GPU fails) elements and results are same.
+
+=========================================================================================================================================================
+
+Also, in v8 I changed allocation with malloc() to allocation with cudaMallocHost. This would speed of transfer between CPU and GPU when cudaMemcpy is called.
+But when using Unified Memory, we do not need to call manually cudaMemcpy, that happens internaly. 
+When using host and device memory separately, allocation host memory with cudaMallocHost will speed up "calls of cudaMemcpy".
+
