@@ -1,0 +1,18 @@
+
+
+Your next assignment will be to find the maximum element in a vector of
+900000000 floats. Still 900 million, but this time floats! Your program
+should...
+
+- Allocate the memory needed to store 900 million numbers and initialize
+the memory with random numbers between 0 and 1. Hint: it is faster to
+initialize the vector on the GPU.
+
+- Find the index and the value of the largest number using the GPU and
+the CPU.
+
+- Output the index and the value found on the GPU and the CPU for
+comparison.
+
+- Print a comprehensive log to the command line stating the runtimes of
+different sections of your program.

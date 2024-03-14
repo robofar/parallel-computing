@@ -1,0 +1,43 @@
+
+
+================================================ NOTE ==============================================================================
+Since we are now creating only 1 array of 900 million floats, there is enoguh device memory, so I will use separate host and device memory.
+
+For initialization, I will initialize on GPU as you suggested (and then transfer it to CPU).
+
+====================================================================================================================================
+
+
+========================================== CODE =================================================
+
+Workflow (for easier understanding while looking at the code):
+1. Allocate array on GPU
+2. Initialize array on GPU (+ simultaneously find max index and value in same kernel)
+3. Copy max index and max value from GPU to CPU
+4. Print GPU max_index and max_value
+
+5. Allocate array on CPU
+6. Copy content of GPU Array to CPU Array
+7. Find max index and value on CPU
+8. Print CPU max_index and max_value
+
+9. Free all memory that has been allocated
+
+================================================================================================
+
+=================================== OUTPUT ===========================================
+In the terminal you can see that both - max values and indexes are same for both - CPU and GPU.
+I also printed runtimes of different parts of the code.
+======================================================================================
+
+
+======================= Executing instructions ======================================
+For running the program, cd to the Assignment02 directory, and run:
+
+bash compile.sh
+bash execute.sh
+======================================================================================
+
+
+Please, feel free to provide your feedback about any things that would be useful for this task or in general.
+
